@@ -1,0 +1,70 @@
+"""
+Problem: amc12a_2017_p7
+
+Informal Statement:
+Define a function on the positive integers recursively by $f(1) = 2$, $f(n) = f(n-1) + 1$ if $n$ is even, and $f(n) = f(n-2) + 2$ if $n$ is odd and greater than $1$. What is $f(2017)$?
+
+$ \textbf{(A)}\ 2017 \qquad\textbf{(B)}\ 2018 \qquad\textbf{(C)}\ 4034 \qquad\textbf{(D)}\ 4035 \qquad\textbf{(E)}\ 4036 $ Show that it is \textbf{(B)}.
+
+Formal Statement:
+theorem amc12a_2017_p7 (f : ℕ → ℝ) (h₀ : f 1 = 2) (h₁ : ∀ n, 1 < n ∧ Even n → f n = f (n - 1) + 1)
+  (h₂ : ∀ n, 1 < n ∧ Odd n → f n = f (n - 2) + 2) : f 2017 = 2018 := by
+
+Goal:
+f : ℕ → ℝ
+h₀ : f 1 = 2
+h₁ : ∀ (n : ℕ), 1 < n ∧ Even n → f n = f (n - 1) + 1
+h₂ : ∀ (n : ℕ), 1 < n ∧ Odd n → f n = f (n - 2) + 2
+⊢ f 2017 = 2018
+
+"""
+
+prove:
+    prop odd(n Z):
+        n % 2 = 1
+    prop even(n Z):
+        n % 2 = 0
+
+    know forall n Z => $odd(n) <=> $odd(n-2)
+    know forall n Z => $even(n) <=> $even(n-2)
+
+    fn f(n N_pos) R:
+        forall n N_pos:
+            $even(n)
+            f(n) = f(n-1) + 1
+        forall n N_pos:
+            $odd(n)
+            f(n) = f(n-2) + 2
+    know f(1) = 2
+
+    know:
+        forall n N_pos:
+            $odd(n)
+            =>:
+                =:
+                    f(n)
+                    f(1) + 2*(n-1)/2
+                    2 + (n-1)*2/2
+                    2 + (n-1)*(2/2) 
+                    2 + (n-1)
+                    n + 1
+        forall n N_pos:
+            $even(n)
+            =>:
+                =:
+                    f(n)
+                    f(n-1) + 1
+                    f(1) + 2*(n-1-1)/2 + 1
+                    2 + (n-2)*2/2 + 1
+                    2 + (n-2)*(2/2) + 1
+                    2 + (n-2) + 1
+                    n + 1
+
+    claim:
+        f(2017) = 2018
+        prove:
+            $odd(2017)
+            =:
+                f(2017)
+                2017 + 1
+                2018

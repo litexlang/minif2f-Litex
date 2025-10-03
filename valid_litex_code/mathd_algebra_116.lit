@@ -1,3 +1,21 @@
+"""
+Problem: mathd_algebra_116
+
+Informal Statement:
+For what real value of $k$ is $\frac{13-\sqrt{131}}{4}$ a root of $2x^2-13x+k$? Show that it is $\frac{19}{4}$.
+
+Formal Statement:
+theorem mathd_algebra_116 (k x : ℝ) (h₀ : x = (13 - Real.sqrt 131) / 4)
+    (h₁ : 2 * x ^ 2 - 13 * x + k = 0) : k = 19 / 4 := by
+
+Goal:
+k x : ℝ
+h₀ : x = (13 - √131) / 4
+h₁ : 2 * x ^ 2 - 13 * x + k = 0
+⊢ k = 19 / 4
+
+"""
+
 "
 ## mathd_algebra_116  
 - **split:** `valid`  

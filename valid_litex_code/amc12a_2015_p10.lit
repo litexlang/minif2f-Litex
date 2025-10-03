@@ -1,3 +1,23 @@
+"""
+Problem: amc12a_2015_p10
+
+Informal Statement:
+Integers $x$ and $y$ with $x>y>0$ satisfy $x+y+xy=80$. What is $x$?
+
+$ \textbf{(A)}\ 8 \qquad\textbf{(B)}\ 10 \qquad\textbf{(C)}\ 15 \qquad\textbf{(D)}\ 18 \qquad\textbf{(E)}\ 26$ Show that it is \textbf{(E)}\ 26.
+
+Formal Statement:
+theorem amc12a_2015_p10 (x y : ℤ) (h₀ : 0 < y) (h₁ : y < x) (h₂ : x + y + x * y = 80) : x = 26 := by
+
+Goal:
+x y : ℤ
+h₀ : 0 < y
+h₁ : y < x
+h₂ : x + y + x * y = 80
+⊢ x = 26
+
+"""
+
 "
 ## amc12a_2015_p10  
 - **split:** `valid`  

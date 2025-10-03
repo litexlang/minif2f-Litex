@@ -1,0 +1,40 @@
+"""
+Problem: mathd_algebra_480
+
+Informal Statement:
+Let \[f(x) = \begin{cases}
+-x^2 - 1 &\text{if }x<0, \\
+2&\text{if }0 \le x< 4, \\
+\sqrt{x}&\text{if }x \ge 4.
+\end{cases}
+\]Find $f(\pi)$. Show that it is 2.
+
+Formal Statement:
+theorem mathd_algebra_480 (f : ℝ → ℝ) (h₀ : ∀ x < 0, f x = -x ^ 2 - 1)
+  (h₁ : ∀ x, 0 ≤ x ∧ x < 4 → f x = 2) (h₂ : ∀ x ≥ 4, f x = Real.sqrt x) : f Real.pi = 2 := by
+
+Goal:
+f : ℝ → ℝ
+h₀ : ∀ x < 0, f x = -x ^ 2 - 1
+h₁ : ∀ (x : ℝ), 0 ≤ x ∧ x < 4 → f x = 2
+h₂ : ∀ x ≥ 4, f x = √x
+⊢ f π = 2
+
+"""
+
+prove:
+    fn f(x R) R
+
+    know forall x R: x < 0 => f(x) = - x ^ 2 - 1
+
+    know forall x R: x >= 0, x < 4 => f(x) = 2
+
+    know forall x R: x >= 4 => f(x) = sqrt(x)
+
+    have pi R
+    know pi >= 0, pi < 4
+
+    claim:
+        f(pi) = 2
+        prove:
+            f(pi) = 2

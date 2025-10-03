@@ -1,0 +1,42 @@
+"""
+Problem: mathd_algebra_510
+
+Informal Statement:
+Given that $x + y = 13$ and $xy = 24$, find the distance from the point $(x, y)$ to the origin. Show that it is 11.
+
+Formal Statement:
+theorem mathd_algebra_510 (x y : ℝ) (h₀ : x + y = 13) (h₁ : x * y = 24) :
+  Real.sqrt (x ^ 2 + y ^ 2) = 11 := by
+
+Goal:
+x y : ℝ
+h₀ : x + y = 13
+h₁ : x * y = 24
+⊢ √(x ^ 2 + y ^ 2) = 11
+
+"""
+
+prove:
+    fn distance_to_origin(x, y R) R => distance_to_origin(x, y) = sqrt(x ^ 2 + y ^ 2)
+    know sqrt(121) = 11
+    
+    claim:
+        forall x, y R:
+            x + y = 13
+            x * y = 24
+            =>:
+                distance_to_origin(x, y) = 11
+        prove:
+            =:
+                x ^ 2 + y ^ 2
+                (x + y) ^ 2 - 2 * x * y
+                13 ^ 2 - 2 * 24
+                121
+            121 >= 0
+            x ^ 2 + y ^ 2 >= 0
+            =:
+                distance_to_origin(x, y)
+                sqrt(x ^ 2 + y ^ 2)
+                sqrt(121)
+                11
+            distance_to_origin(x, y) = 11

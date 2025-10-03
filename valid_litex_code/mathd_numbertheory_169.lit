@@ -1,3 +1,17 @@
+"""
+Problem: mathd_numbertheory_169
+
+Informal Statement:
+What is the greatest common factor of $20 !$ and $200,\!000$?  (Reminder: If $n$ is a positive integer, then $n!$ stands for the product $1\cdot 2\cdot 3\cdot \cdots \cdot (n-1)\cdot n$.) Show that it is 40,\!000.
+
+Formal Statement:
+theorem mathd_numbertheory_169 : Nat.gcd 20! 200000 = 40000 := by
+
+Goal:
+⊢ 20!.gcd 200000 = 40000
+
+"""
+
 "
 ## mathd_numbertheory_169  
 - **split:** `valid`  

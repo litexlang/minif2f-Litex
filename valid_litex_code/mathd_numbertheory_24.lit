@@ -1,0 +1,20 @@
+"""
+Problem: mathd_numbertheory_24
+
+Informal Statement:
+What is the tens digit in the sum $11^1 + 11^2 + 11^3 + \ldots + 11^9$? Show that it is 5.
+
+Formal Statement:
+theorem mathd_numbertheory_24 : (∑ k in Finset.Icc 1 9, 11 ^ k) % 100 = 59 := by
+
+Goal:
+⊢ (∑ k ∈ Finset.Icc 1 9, 11 ^ k) % 100 = 59
+
+"""
+
+claim:
+    ((11^1 + 11^2 + 11^3 + 11^4 + 11^5 + 11^6 + 11^7 + 11^8 + 11^9 - (11^1 + 11^2 + 11^3 + 11^4 + 11^5 + 11^6 + 11^7 + 11^8 + 11^9) % 10) / 10) % 10 = 5
+    prove:
+        11^1+11^2+11^3+11^4+11^5+11^6+11^7+11^8+11^9=2593742459
+        (2593742459 - 2593742459 % 10) / 10 = 259374245
+        259374245 % 10 = 5

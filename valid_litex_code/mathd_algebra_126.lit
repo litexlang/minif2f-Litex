@@ -1,0 +1,41 @@
+"""
+Problem: mathd_algebra_126
+
+Informal Statement:
+The midpoint of the line segment between $(x,y)$ and $(-9,1)$ is $(3,-5)$. Find $(x,y)$. Show that it is (15,-11).
+
+Formal Statement:
+theorem mathd_algebra_126 (x y : ℝ) (h₀ : 2 * 3 = x - 9) (h₁ : 2 * -5 = y + 1) : x = 15 ∧ y = -11 := by
+
+Goal:
+x y : ℝ
+h₀ : 2 * 3 = x - 9
+h₁ : 2 * -5 = y + 1
+⊢ x = 15 ∧ y = -11
+
+"""
+
+prove:
+    fn mid_point(a, b R) R => mid_point(a, b) = (a + b) / 2
+
+    claim:
+        @p(x, y R):
+            mid_point(x, -9) = 3
+            mid_point(y, 1) = -5
+            =>:
+                x = 15
+                y = -11
+        prove:
+            (x + -9) / 2 = 3
+            mid_point(y, 1) = (y + 1) / 2
+            (y + 1) / 2 = -5
+            x + -9 = 2 * 3
+            x + -9 = 6
+            x + -9 + 9 = 6 + 9
+            x + -9 + 9 = x + (-9 + 9)
+            x + (-9 + 9) = 15
+            x = 15
+            y + 1 = 2 * -5
+            y + 1 = -10
+            y = -10 - 1
+            y = -11

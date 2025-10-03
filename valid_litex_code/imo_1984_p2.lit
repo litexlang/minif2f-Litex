@@ -1,0 +1,39 @@
+"""
+Problem: imo_1984_p2
+
+Informal Statement:
+Find one pair of positive integers $a,b$ such that $ab(a+b)$ is not divisible by $7$, but $(a+b)^7-a^7-b^7$ is divisible by $7^7$.
+
+Formal Statement:
+theorem imo_1984_p2 (a b : ℤ) (h₀ : 0 < a ∧ 0 < b) (h₁ : ¬7 ∣ a) (h₂ : ¬7 ∣ b) (h₃ : ¬7 ∣ a + b)
+  (h₄ : 7 ^ 7 ∣ (a + b) ^ 7 - a ^ 7 - b ^ 7) : 19 ≤ a + b := by
+
+Goal:
+a b : ℤ
+h₀ : 0 < a ∧ 0 < b
+h₁ : ¬7 ∣ a
+h₂ : ¬7 ∣ b
+h₃ : ¬7 ∣ a + b
+h₄ : 7 ^ 7 ∣ (a + b) ^ 7 - a ^ 7 - b ^ 7
+⊢ 19 ≤ a + b
+
+"""
+
+
+
+prove:
+    prop divides(a, b Z):
+        a != 0
+        <=>:
+            b % a = 0
+
+    exist_prop a, b N_pos st p():
+        <=>:
+            not 7 $divides a * b * (a + b)
+            7 ^ 7 $divides (a + b) ^ 7 - a ^ 7 - b ^ 7
+
+    claim:
+        $p()
+        prove:
+            exist 324, 1 st $p() # directly verified by built-in calculation
+            $p()

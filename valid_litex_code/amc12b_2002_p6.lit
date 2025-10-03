@@ -1,0 +1,62 @@
+"""
+Problem: amc12b_2002_p6
+
+Informal Statement:
+Suppose that $a$ and $b$ are nonzero real numbers, and that the [[equation]] $x^2 + ax + b = 0$ has solutions $a$ and $b$. Then the pair $(a,b)$ is
+
+$\mathrm{(A)}\ (-2,1)
+\qquad\mathrm{(B)}\ (-1,2)
+\qquad\mathrm{(C)}\ (1,-2)
+\qquad\mathrm{(D)}\ (2,-1)
+\qquad\mathrm{(E)}\ (4,4)$ Show that it is \mathrm{(C)}\ (1,-2).
+
+Formal Statement:
+theorem amc12b_2002_p6 (a b : ℝ) (h₀ : a ≠ 0 ∧ b ≠ 0)
+  (h₁ : ∀ x, x ^ 2 + a * x + b = (x - a) * (x - b)) : a = 1 ∧ b = -2 := by
+
+Goal:
+a b : ℝ
+h₀ : a ≠ 0 ∧ b ≠ 0
+h₁ : ∀ (x : ℝ), x ^ 2 + a * x + b = (x - a) * (x - b)
+⊢ a = 1 ∧ b = -2
+
+"""
+
+prove:
+	fn f(x R) R:
+		forall x R:
+			f(x) = x ^ 2 + a * x + b
+
+	claim:
+        forall a, b R:
+            a != 0
+            b != 0
+            f(a) = 0
+            f(b) = 0
+            =>:
+                a = 1
+                b = -2
+        prove:
+            f(a) = a ^ 2 + a * a + b
+            f(b) = b ^ 2 + a * b + b
+            know a + b = -a # Vieta Theorem
+
+            a + b + a = -a + a
+            a + b + a = b + 2 * a
+            2 * a + b = 0
+
+            f(b) = b * (b + a + 1)
+            b * (b + a + 1) = 0
+            b * (b + a + 1) / b = 0 / b
+            b * (b + a + 1) / b = b + a + 1
+            b + a + 1 = 0
+            b + a + 1 - (a + 1) = 0 - (a + 1)
+            b = -(a + 1)
+
+            2 * a + (-(a + 1)) = 0
+            a - 1 = 0
+            a - 1 + 1 = 0 + 1
+            a - 1 + 1 = a
+            a = 1
+            b = -(1 + 1)
+            b = -2

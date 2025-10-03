@@ -1,0 +1,33 @@
+"""
+Problem: mathd_algebra_433
+
+Informal Statement:
+Let $f(x) = 3\sqrt{2x - 7} - 8$.  Find $f(8)$. Show that it is 1.
+
+Formal Statement:
+theorem mathd_algebra_433 (f : ℝ → ℝ) (h₀ : ∀ x, f x = 3 * Real.sqrt (2 * x - 7) - 8) : f 8 = 1 := by
+
+Goal:
+f : ℝ → ℝ
+h₀ : ∀ (x : ℝ), f x = 3 * √(2 * x - 7) - 8
+⊢ f 8 = 1
+
+"""
+
+prove:
+    fn f(x R) R
+
+    claim:
+        forall:
+            forall x R => f(x) = 3 * sqrt(2 * x - 7) - 8
+            =>:
+                f(8) = 1
+        prove:
+            know sqrt(9) = 3
+            =:
+                f(8)
+                3 * sqrt(2 * 8 - 7) - 8
+                3 * sqrt(9) - 8
+                3 * 3 - 8
+                1
+            f(8) = 1

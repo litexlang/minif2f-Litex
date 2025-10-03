@@ -1,0 +1,38 @@
+"""
+Problem: mathd_algebra_245
+
+Informal Statement:
+Simplify $\left( \frac{4}{x} \right)^{-1} \left( \frac{3x^3}{x} \right)^2 \left( \frac{1}{2x} \right)^{-3}$. Show that it is 18x^8.
+
+Formal Statement:
+theorem mathd_algebra_245 (x : ℝ) (h₀ : x ≠ 0) :
+  (4 / x)⁻¹ * (3 * x ^ 3 / x) ^ 2 * (1 / (2 * x))⁻¹ ^ 3 = 18 * x ^ 8 := by
+
+Goal:
+x : ℝ
+h₀ : x ≠ 0
+⊢ (4 / x)⁻¹ * (3 * x ^ 3 / x) ^ 2 * (1 / (2 * x))⁻¹ ^ 3 = 18 * x ^ 8
+
+"""
+
+claim:
+    forall x R:
+        x != 0
+        =>:
+            1 / (4 / x) * (3 * x ^ 3 / x) ^ 2 * (1 / (1 / (2 * x))) ^ 3 = 18 * x ^ 8
+    prove:
+        know 4 / x != 0, 2 * x != 0, 1 / (2 * x) != 0
+        1 / (4 / x) = x / 4
+        =:
+            (3 * x ^ 3 / x) ^ 2
+            (3 * x ^ 2) ^ 2
+            9 * x ^ 4
+        =:
+            (1 / (1 / (2 * x))) ^ 3
+            (2 * x) ^ 3
+            8 * x ^ 3
+        =:
+            1 / (4 / x) * (3 * x ^ 3 / x) ^ 2 * (1 / (1 / (2 * x))) ^ 3
+            x / 4 * (9 * x ^ 4) * (8 * x ^ 3)
+            18 * x ^ 8
+        1 / (4 / x) * (3 * x ^ 3 / x) ^ 2 * (1 / (1 / (2 * x))) ^ 3 = 18 * x ^ 8

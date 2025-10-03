@@ -1,0 +1,47 @@
+"""
+Problem: mathd_numbertheory_257
+
+Informal Statement:
+Cards are numbered from 1 to 100. One card is removed and the values on the other 99 are added. The resulting sum is a multiple of 77. What number was on the card that was removed? Show that it is 45.
+
+Formal Statement:
+theorem mathd_numbertheory_257 (x : ℕ) (h₀ : 1 ≤ x ∧ x ≤ 100)
+    (h₁ : 77 ∣ (∑ k in Finset.range 101, k) - x) : x = 45 := by
+
+Goal:
+x : ℕ
+h₀ : 1 ≤ x ∧ x ≤ 100
+h₁ : 77 ∣ ∑ k ∈ Finset.range 101, k - x
+⊢ x = 45
+
+"""
+
+prove:
+    fn sum_range(n N) N
+    know:
+        forall n N:
+            sum_range(n) = 1/2*n*(n+1)
+
+    exist_prop k Z st divides(a, b Z): 
+        a != 0
+        <=>:  
+            b = a * k
+
+    let r N # sum of the remaining 99 cards
+    know $divides(77,r)
+
+    let x N # the card removed
+    know:
+        1 <= x
+        x <= 100
+        x + r = sum_range(100)
+
+    claim:
+        x = 45
+        prove:
+            know x = sum_range(100)%77
+            =:
+                x
+                sum_range(100)%77
+                5050%77
+                45

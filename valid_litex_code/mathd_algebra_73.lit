@@ -1,0 +1,60 @@
+"""
+Problem: mathd_algebra_73
+
+Informal Statement:
+Let $p$, $q$, and $r$ be constants. One solution to the equation $(x-p)(x-q) = (r-p)(r-q)$ is $x=r$. Find the other solution in terms of $p$, $q$, and $r$. Show that it is p+q-r.
+
+Formal Statement:
+theorem mathd_algebra_73 (p q r x : ℂ) (h₀ : (x - p) * (x - q) = (r - p) * (r - q)) (h₁ : x ≠ r) :
+  x = p + q - r := by
+
+Goal:
+p q r x : ℂ
+h₀ : (x - p) * (x - q) = (r - p) * (r - q)
+h₁ : x ≠ r
+⊢ x = p + q - r
+
+"""
+
+claim:
+    @S(x, y, q, r R):
+        (x - y) * (x - q) = (r - y) * (r - q)
+        x != r
+        =>:
+            x = y + q - r
+    prove:
+        =:
+            x ^ 2 - (y + q) * x + y * q
+            (x - y) * (x - q)
+            (r - y) * (r - q)
+            r ^ 2 - (y + q) * r + y * q
+        =:
+            0
+            x ^ 2 - (y + q) * x + y * q - (r ^ 2 - (y + q) * r + y * q)
+            x ^ 2 - (y + q) * x + (y + q - r) * r
+            (x - r) * (x - (y + q -r))
+        $product_is_0_then_at_least_one_factor_is_0(x - r, x - (y + q - r))
+        or(x - r = 0, x - (y + q - r) = 0)
+        prove_in_each_case:
+            or(x - r = 0, x - (y + q - r) = 0)
+            =>:
+                x = y + q - r
+            prove:
+                claim:
+                    x = y + q - r
+                    prove_by_contradiction:
+                        x - r = 0
+                        =:
+                            x
+                            x - r + r
+                            0 + r
+                            r
+                        x != r
+            prove:
+                x - (y + q - r) = 0
+                =:
+                    x
+                    x - (y + q - r) + (y + q - r)
+                    0 + (y + q - r)
+                    y + q - r
+        x = y + q - r

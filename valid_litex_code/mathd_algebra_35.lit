@@ -1,0 +1,33 @@
+"""
+Problem: mathd_algebra_35
+
+Informal Statement:
+If $p (x) = 2-x^2$ and $q(x) = \frac{6}{x}$, what is the value of $p (q(2))$? Show that it is -7.
+
+Formal Statement:
+theorem mathd_algebra_35 (p q : ℝ → ℝ) (h₀ : ∀ x, p x = 2 - x ^ 2)
+    (h₁ : ∀ x : ℝ, x ≠ 0 → q x = 6 / x) : p (q 2) = -7 := by
+
+Goal:
+p q : ℝ → ℝ
+h₀ : ∀ (x : ℝ), p x = 2 - x ^ 2
+h₁ : ∀ (x : ℝ), x ≠ 0 → q x = 6 / x
+⊢ p (q 2) = -7
+
+"""
+
+prove:
+    fn p(x R) R => p(x) = 2 - x ^ 2
+
+    fn q(x R) R: x != 0 => q(x) = 6 / x
+
+    claim:
+        p(q(2)) = -7
+        prove:
+            =:
+                p(q(2))
+                p(6 / 2)
+                p(3)
+                2 - 3 ^ 2
+                -7
+            p(q(2)) = -7

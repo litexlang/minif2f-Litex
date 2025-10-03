@@ -1,0 +1,12 @@
+"""
+Problem: mathd_algebra_200
+
+Informal Statement:
+Tim is doing a cakewalk with 11 steps, he takes his first step on step 1 and takes a total of 139 steps, walking in a circle (so that after the 11th step he reaches the first step again), which step of the cakewalk does he end on? Show that it is 7.
+
+"""
+
+claim:
+    139 % 11 = 7
+    prove:
+        139 % 11 = 7

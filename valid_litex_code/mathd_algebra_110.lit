@@ -1,0 +1,30 @@
+"""
+Problem: mathd_algebra_110
+
+Informal Statement:
+Simplify $(2-2i)(5+5i)$, where $i^2 = -1.$ Show that it is 20.
+
+Formal Statement:
+theorem mathd_algebra_110 (q e : ℂ) (h₀ : q = 2 - 2 * Complex.I) (h₁ : e = 5 + 5 * Complex.I) :
+    q * e = 20 := by
+
+Goal:
+q e : ℂ
+h₀ : q = 2 - 2 * Complex.I
+h₁ : e = 5 + 5 * Complex.I
+⊢ q * e = 20
+
+"""
+
+claim:
+    @p(a R):
+        a ^ 2 = -1
+        =>:
+            (2 - 2 * a) * (5 + 5 * a) = 20
+    prove:
+        =:
+            (2 - 2 * a) * (5 + 5 * a)
+            10 - 10 * a ^ 2
+            10 - 10 * (-1)
+            20
+        (2 - 2 * a) * (5 + 5 * a) = 20

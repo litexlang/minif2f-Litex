@@ -1,0 +1,44 @@
+"""
+Problem: amc12a_2021_p7
+
+Informal Statement:
+What is the least possible value of $(xy-1)^2+(x+y)^2$ for real numbers $x$ and $y$?
+
+$\textbf{(A)} ~0\qquad\textbf{(B)} ~\frac{1}{4}\qquad\textbf{(C)} ~\frac{1}{2} \qquad\textbf{(D)} ~1 \qquad\textbf{(E)} Show that it is \textbf{(D)} ~1.
+
+Formal Statement:
+theorem amc12a_2021_p7 (x y : ℝ) : 1 ≤ (x * y - 1) ^ 2 + (x + y) ^ 2 := by
+
+Goal:
+x y : ℝ
+⊢ 1 ≤ (x * y - 1) ^ 2 + (x + y) ^ 2
+
+"""
+
+claim:
+    forall x, y R:
+        (x * y - 1) ^ 2 + (x + y) ^ 2 >= 1
+    prove:
+        know forall a R => a ^ 2 >= 0
+
+        know forall a, b, c R: a >= b => a + c >= b + c
+
+        know forall a, b, c R: a >= b, c >= 0 => a * c >= b * c
+
+        know @transitivity_of_ge(a, b, c R): a >= b, b >= c => a >= c
+    
+        =:
+            (x * y - 1) ^ 2 + (x + y) ^ 2
+            x ^ 2 * y ^ 2 + x ^ 2 + y ^ 2 + 1
+            (x ^ 2 + 1) * (y ^ 2 + 1)
+        x ^ 2 >= 0
+        x ^ 2 + 1 >= 0 + 1
+        x ^ 2 + 1 >= 1
+        y ^ 2 >= 0
+        y ^ 2 + 1 >= 0 + 1
+        y ^ 2 + 1 >= 1
+        $transitivity_of_ge(y ^ 2 + 1, 1, 0)
+        y ^ 2 + 1 >= 0
+        (x ^ 2 + 1) * (y ^ 2 + 1) >= 1 * (y ^ 2 + 1)
+        $transitivity_of_ge((x ^ 2 + 1) * (y ^ 2 + 1), y ^ 2 + 1, 1)
+        (x * y - 1) ^ 2 + (x + y) ^ 2 >= 1

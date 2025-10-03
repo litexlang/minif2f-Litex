@@ -1,0 +1,49 @@
+"""
+Problem: mathd_numbertheory_188
+
+Informal Statement:
+Find the greatest common factor of 180 and 168. Show that it is 12.
+
+Formal Statement:
+theorem mathd_numbertheory_188 : Nat.gcd 180 168 = 12 := by
+
+Goal:
+⊢ Nat.gcd 180 168 = 12
+
+"""
+
+prove:
+    exist_prop k Z st divides(a, b Z): 
+        a != 0
+        <=>:  
+            b = a * k
+
+    fn gcd(a N, b N) N:  
+        forall a N, b N:  
+            b = 0  
+            =>:  
+                gcd(a, b) = a  
+        forall a N, b N: 
+            a != 0 
+            b != 0
+            a >= b
+            =>:  
+                gcd(a, b) = gcd(b, a % b)
+        forall a N, b N:
+            a != 0 
+            b != 0
+            a < b
+            =>:  
+                gcd(a, b) = gcd(b, a)
+
+
+    know forall x N => gcd(x,1) = 1
+
+    claim:
+        gcd(180,168) = 12
+        prove:
+            =:
+                gcd(180,168)
+                gcd(168,12)
+                gcd(12,0)
+                12

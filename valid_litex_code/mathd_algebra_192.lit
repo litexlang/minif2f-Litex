@@ -1,0 +1,49 @@
+"""
+Problem: mathd_algebra_192
+
+Informal Statement:
+If $Q = 11-5i$, $E = 11+5i$, and $D = 2i$, find $Q\cdot E \cdot D$. Show that it is 292i.
+
+Formal Statement:
+theorem mathd_algebra_192 (q e d : ℂ) (h₀ : q = 11 - 5 * Complex.I) (h₁ : e = 11 + 5 * Complex.I)
+    (h₂ : d = 2 * Complex.I) : q * e * d = 292 * Complex.I := by
+
+Goal:
+q e d : ℂ
+h₀ : q = 11 - 5 * Complex.I
+h₁ : e = 11 + 5 * Complex.I
+h₂ : d = 2 * Complex.I
+⊢ q * e * d = 292 * Complex.I
+
+"""
+
+prove:
+fn complex(a,b R) C
+
+fn complex_add(z1 C, z2 C) C:  
+    forall a1 R, b1 R, a2 R, b2 R:  
+        z1 = complex(a1, b1)  
+        z2 = complex(a2, b2)  
+        =>:  
+            complex_add(z1, z2) = complex(a1 + a2, b1 + b2)
+
+fn complex_times(z1 C, z2 C) C:  
+    forall a1 R, b1 R, a2 R, b2 R:  
+        z1 = complex(a1, b1)  
+        z2 = complex(a2, b2)  
+        =>:  
+            complex_times(z1, z2) = complex(a1*a2 - b1*b2, a1*b2+b1*a2)
+
+claim:
+    forall q, e, d C:
+        q = complex(11,-5)
+        e = complex(11,5)
+        d = complex(0,2)
+        =>:
+            complex_times(complex_times(q,e), d) = complex(0,292)
+
+    prove:
+        complex_times(q,e) = complex(11*11-(-5)*5,11*5+(-5)*11)
+        complex_times(q,e) = complex(146, 0)
+        complex_times(complex_times(q,e), d) = complex(146*0-0*2, 146*2+0*0)
+        complex_times(complex_times(q,e), d) = complex(0,292)

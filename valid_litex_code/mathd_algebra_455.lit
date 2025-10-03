@@ -1,0 +1,27 @@
+"""
+Problem: mathd_algebra_455
+
+Informal Statement:
+At each basketball practice last week, Jenny made twice as many free throws as she made at the previous practice.  At her fifth practice she made 48 free throws.  How many free throws did she make at the first practice? Show that it is 3.
+
+Formal Statement:
+theorem mathd_algebra_455 (x : ℝ) (h₀ : 2 * (2 * (2 * (2 * x))) = 48) : x = 3 := by
+
+Goal:
+x : ℝ
+h₀ : 2 * (2 * (2 * (2 * x))) = 48
+⊢ x = 3
+
+"""
+
+claim:
+    forall x R:
+        2 * (2 * (2 * (2 * x))) = 48
+        =>:
+            x = 3
+    prove:
+        2 * (2 * (2 * x)) = 48 / 2
+        2 * (2 * x) = 48 / 2 / 2
+        2 * x = 48 / 2 / 2 / 2
+        x = 48 / 2 / 2 / 2 / 2
+        x = 3

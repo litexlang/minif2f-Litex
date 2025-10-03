@@ -1,3 +1,18 @@
+"""
+Problem: mathd_algebra_182
+
+Informal Statement:
+Expand the following expression: $7(3y+2)$ Show that it is 21y+14.
+
+Formal Statement:
+theorem mathd_algebra_182 (y : ℂ) : 7 * (3 * y + 2) = 21 * y + 14 := by
+
+Goal:
+y : ℂ
+⊢ 7 * (3 * y + 2) = 21 * y + 14
+
+"""
+
 "
 ## mathd_algebra_182  
 - **split:** `valid`  

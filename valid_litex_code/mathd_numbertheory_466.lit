@@ -1,0 +1,22 @@
+"""
+Problem: mathd_numbertheory_466
+
+Informal Statement:
+What is the remainder when $1 + 2 + 3 + 4 + \dots + 9 + 10$ is divided by 9? Show that it is 1.
+
+Formal Statement:
+theorem mathd_numbertheory_466 : (∑ k in Finset.range 11, k) % 9 = 1 := by
+
+Goal:
+⊢ (∑ k ∈ Finset.range 11, k) % 9 = 1
+
+"""
+
+claim:
+	(1+2+3+4+5+6+7+8+9+10) % 9 = 1
+	prove:
+		=:
+			(1+2+3+4+5+6+7+8+9+10) % 9
+			55 % 9
+			1
+		(1+2+3+4+5+6+7+8+9+10) % 9 = 1

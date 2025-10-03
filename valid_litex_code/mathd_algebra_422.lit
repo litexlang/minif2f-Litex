@@ -1,0 +1,69 @@
+"""
+Problem: mathd_algebra_422
+
+Informal Statement:
+If $f(x)=5x-12$, find a value for $x$ so that $f^{-1}(x)=f(x+1)$. Show that it is \frac{47}{24}.
+
+Formal Statement:
+theorem mathd_algebra_422 (x : ℝ) (σ : Equiv ℝ ℝ) (h₀ : ∀ x, σ.1 x = 5 * x - 12)
+  (h₁ : σ.1 (x + 1) = σ.2 x) : x = 47 / 24 := by
+
+Goal:
+x : ℝ
+σ : ℝ ≃ ℝ
+h₀ : ∀ (x : ℝ), σ.toFun x = 5 * x - 12
+h₁ : σ.toFun (x + 1) = σ.invFun x
+⊢ x = 47 / 24
+
+"""
+
+prove:
+    fn f(x R) R:
+        forall x R:
+            f(x) = 5*x - 12
+
+    fn g(x R) R:
+        forall x R:
+            x = f(g(x))
+
+    forall x R:
+        x = f(g(x))
+        x = 5*g(x) - 12
+        5*g(x) - 12 + 12 = x + 12
+        5*g(x) = x + 12
+        5*g(x)/5 = (x+12)/5
+        g(x) = (x+12)/5
+
+    forall x R:
+        =:
+            f(x+1)
+            5*(x+1) - 12
+            5*x + 5 - 12
+            5*x - 7
+
+    let x R
+
+    claim:
+        x = 47/24
+        prove:
+            know g(x) = f(x+1)
+            g(x) = (x+12)/5
+            f(x+1) = 5*x - 7
+            (x+12)/5 = 5*x - 7
+            ((x+12)/5) * 5 = (5*x-7) * 5
+            ((x+12)/5) * 5 = x + 12
+            x+12 = 5*x*5 - 7*5
+            x + 12 = 5*5*x - 35
+            x + 12 = 25*x - 35
+            25*x - 35 - 12 = x + 12 - 12
+            x + 12 - 12 = x
+            25*x - (35 + 12) = x
+            25*x - 47 = x
+            25*x - x - 47 = x - x
+            25*x - x - 47 = 24*x - 47
+            24*x - 47 = 0
+            24*x - 47 + 47 = 0 + 47
+            24*x - 47 + 47 = 24*x
+            24*x = 47
+            24*x/24 = 47/24
+            x = 47/24

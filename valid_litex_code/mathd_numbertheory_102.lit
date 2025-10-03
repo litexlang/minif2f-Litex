@@ -1,0 +1,20 @@
+"""
+Problem: mathd_numbertheory_102
+
+Informal Statement:
+Find the remainder of $2^8$ when it is divided by 5. Show that it is 1.
+
+Formal Statement:
+theorem mathd_numbertheory_102 : 2 ^ 8 % 5 = 1 := by
+
+Goal:
+⊢ 2 ^ 8 % 5 = 1
+
+"""
+
+prove:
+    claim:
+        (2 ^ 8) % 5 = 1
+        prove:
+            (2 ^ 8) % 5 = 256 % 5
+            256 % 5 = 1

@@ -1,0 +1,31 @@
+"""
+Problem: mathd_numbertheory_109
+
+Informal Statement:
+Find the modulo $7$ remainder of the sum $1+3+5+7+9+\dots+195+197+199.$ Show that it is 4.
+
+Formal Statement:
+theorem mathd_numbertheory_109 (v : ℕ → ℕ) (h₀ : ∀ n, v n = 2 * n - 1) :
+  (∑ k in Finset.Icc 1 100, v k) % 7 = 4 := by
+
+Goal:
+v : ℕ → ℕ
+h₀ : ∀ (n : ℕ), v n = 2 * n - 1
+⊢ (∑ k ∈ Finset.Icc 1 100, v k) % 7 = 4
+
+"""
+
+claim:
+    forall s, n N:
+        n = (199-1)/2 + 1
+        s = (1+199)*n/2
+        =>:
+            s % 7 = 4
+    prove:
+        n = (199-1)/2 + 1
+        n = 100
+        s = (1+199)*n/2
+        s = (1+199)*100/2
+        s = 10000
+        10000 % 7 = 4
+        s % 7 = 4

@@ -1,0 +1,20 @@
+"""
+Problem: mathd_numbertheory_81
+
+Informal Statement:
+Determine the remainder of 71 (mod 3). Show that it is 2.
+
+Formal Statement:
+theorem mathd_numbertheory_81 : 71 % 3 = 2 := by
+
+Goal:
+⊢ 71 % 3 = 2
+
+"""
+
+prove:
+    claim:
+        (71 % 3) = 2
+        prove:
+            (71 % 3) = 71 % 3
+            71 % 3 = 2

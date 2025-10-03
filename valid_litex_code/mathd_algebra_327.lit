@@ -1,0 +1,40 @@
+"""
+Problem: mathd_algebra_327
+
+Informal Statement:
+Solve for $a$: $\frac15|9+2a|<1$.  Express your answer in interval notation. Show that it is (-7, -2).
+
+Formal Statement:
+theorem mathd_algebra_327 (a : ℝ) (h₀ : 1 / 5 * abs (9 + 2 * a) < 1) : -7 < a ∧ a < -2 := by
+
+Goal:
+a : ℝ
+h₀ : 1 / 5 * |9 + 2 * a| < 1
+⊢ -7 < a ∧ a < -2
+
+"""
+
+prove:
+    know forall a, b R: abs(a) < b => a > -b, a < b
+    know forall a, b, c R: a < b, c > 0 => a * c < b * c
+
+    claim:
+        forall a R:
+            (1 / 5) * abs(9 + 2 * a) < 1
+            =>:
+                a > -7
+                a < -2
+        prove:
+            (1 / 5) * abs(9 + 2 * a) < 1
+            (1 / 5) * abs(9 + 2 * a) * 5 < 1 * 5
+            abs(9 + 2 * a) < 5
+            9 + 2 * a > -5
+            9 + 2 * a < 5
+            9 + 2 * a + -9 > -5 + -9
+            2 * a > -5 - 9
+            2 * a * (1 / 2) > -14 * (1 / 2)
+            a > -7
+            9 + 2 * a + -9 < 5 + -9
+            2 * a < -4
+            2 * a * (1 / 2) < -4 * (1 / 2)
+            a < -2

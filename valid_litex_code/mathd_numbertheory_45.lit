@@ -1,0 +1,53 @@
+"""
+Problem: mathd_numbertheory_45
+
+Informal Statement:
+What is the result when the greatest common factor of 6432 and 132 is increased by 11? Show that it is 23.
+
+Formal Statement:
+theorem mathd_numbertheory_45 : Nat.gcd 6432 132 + 11 = 23 := by
+
+Goal:
+⊢ Nat.gcd 6432 132 + 11 = 23
+
+"""
+
+prove:
+    exist_prop k Z st divides(a, b Z): 
+        a != 0
+        <=>:  
+            b = a * k
+
+    fn gcd(a N, b N) N:  
+        forall a N, b N:  
+            b = 0  
+            =>:  
+                gcd(a, b) = a  
+        forall a N, b N: 
+            a != 0 
+            b != 0
+            a >= b
+            =>:  
+                gcd(a, b) = gcd(b, a % b)
+        forall a N, b N:
+            a != 0 
+            b != 0
+            a < b
+            =>:  
+                gcd(a, b) = gcd(b, a)
+
+
+    know forall x N => gcd(x,1) = 1
+
+    claim:
+        gcd(6432,132) + 11 = 23
+        prove:
+            =:
+                gcd(6432,132) + 11
+                gcd(132,96) + 11
+                gcd(96,36) + 11
+                gcd(36,24) + 11
+                gcd(24,12) + 11
+                gcd(12,0) + 11
+                12 + 11
+                23

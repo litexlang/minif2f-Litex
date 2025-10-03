@@ -1,0 +1,43 @@
+"""
+Problem: amc12_2001_p9
+
+Informal Statement:
+Let $f$ be a function satisfying $f(xy) = \frac{f(x)}y$ for all positive real numbers $x$ and $y$. If $f(500) =3$, what is the value of $f(600)$?
+
+$(\mathrm{A})\ 1 \qquad (\mathrm{B})\ 2 \qquad (\mathrm{C})\ \frac52 \qquad (\mathrm{D})\ 3 \qquad (\mathrm{E})\ \frac{18}5$ Show that it is \textbf{C } \frac52.
+
+Formal Statement:
+theorem amc12_2001_p9 (f : ℝ → ℝ) (h₀ : ∀ x > 0, ∀ y > 0, f (x * y) = f x / y) (h₁ : f 500 = 3) :
+    f 600 = 5 / 2 := by
+
+Goal:
+f : ℝ → ℝ
+h₀ : ∀ x > 0, ∀ y > 0, f (x * y) = f x / y
+h₁ : f 500 = 3
+⊢ f 600 = 5 / 2
+
+"""
+
+prove:
+    fn f(x R) R
+    know:
+        forall x, y R:
+            f(x * y) = f(x) / y
+    claim:
+        forall:
+            forall x, y R:
+                x > 0
+                y > 0
+                =>:
+                    f(x * y) = f(x) / y
+            f(500) = 3
+            =>:
+                f(600) = 5 / 2
+        prove:
+            =:
+                f(600)
+                f(500 * (6 / 5))
+                f(500) / (6 / 5)
+                3 / (6 / 5)
+                5 / 2
+            f(600) = 5 / 2

@@ -1,0 +1,71 @@
+"""
+Problem: induction_sum2kp1npqsqm1
+
+Informal Statement:
+Show that for positive integer n, $\sum_{k=0}^{n-1} (2k + 3) = (n + 1)^2 - 1$.
+
+Formal Statement:
+theorem induction_sum2kp1npqsqm1 (n : ℕ) :
+  ∑ k in Finset.range n, (2 * k + 3) = (n + 1) ^ 2 - 1 := by
+
+Goal:
+n : ℕ
+⊢ ∑ k ∈ Finset.range n, (2 * k + 3) = (n + 1) ^ 2 - 1
+
+"""
+
+"
+## induction_sum2kp1npqsqm1  
+- **split:** `valid`  
+
+### Formal statement
+```lean
+theorem induction_sum2kp1npqsqm1
+  (n : ℕ) :
+  ∑ k in (Finset.range n), 2 * k + 3 = (n + 1)^2 - 1 := sorry
+```
+
+### Informal statement
+Show that for positive integer n, $\sum_{k=0}^{n-1} (2k + 3) = (n + 1)^2 - 1$.
+
+### Informal proof
+We use induction. The base case for $n=0$ states 2*0+3 = 2^2-1 which is true.
+Assuming the result holds for $n\geq 0$, write $\sum_{k=0}^n (2k + 3) = \sum_{k=0}^{n-1} (2k + 3) + 2*n+3 = (n+1)^2 - 1 + 2n + 3 = n^2 + 4n + 4 - 1 = (n+2)^2 -1$. This shows the result holds for $n+1$ and concludes the proof by induction.
+"
+
+prove:
+    fn sum_of_first_n_numbers(s seq(R), n N_pos) R
+    know:
+        forall s seq(R), n N_pos:
+            sum_of_first_n_numbers(s, n + 1) = sum_of_first_n_numbers(s, n) + s(n)
+        forall s seq(R):
+            sum_of_first_n_numbers(s, 1) = s(0)
+
+    let sequence seq(R):
+        forall k N => sequence(k) = 2 * k + 3
+
+    prop tmp(n N_pos):
+        sum_of_first_n_numbers(sequence, n) = (n + 1) ^ 2 - 1
+
+    claim:
+        forall n N_pos: n >= 1 => $tmp(n)
+        prove:
+            =:
+                sum_of_first_n_numbers(sequence, 1)
+                sequence(0)
+                2 * 0 + 3
+                (1 + 1) ^ 2 - 1
+            $tmp(1)
+            claim:
+                forall n0 N_pos: $tmp(n0) => $tmp(n0 + 1)
+                prove:
+                    =:
+                        sum_of_first_n_numbers(sequence, n0 + 1)
+                        sum_of_first_n_numbers(sequence, n0) + sequence(n0)
+                        ((n0 + 1) ^ 2 - 1) + (2 * n0 + 3)
+                        n0 ^ 2 + 4 * n0 + 3
+                        ((n0 + 1) + 1) ^ 2 - 1
+                    $tmp(n0 + 1)
+            prove_by_induction($tmp(n), n, 1)
+            forall n N_pos: n >= 1 => $tmp(n)
+
