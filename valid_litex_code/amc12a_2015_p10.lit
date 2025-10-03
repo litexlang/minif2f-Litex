@@ -18,31 +18,7 @@ h₂ : x + y + x * y = 80
 
 """
 
-"
-## amc12a_2015_p10  
-- **split:** `valid`  
-
-### Formal statement
-```lean
-theorem amc12a_2015_p10
-  (x y : ℤ)
-  (h₀ : 0 < y)
-  (h₁ : y < x)
-  (h₂ : x + y + (x * y) = 80) :
-  x = 26 := sorry
-```
-
-### Informal statement
-Integers $x$ and $y$ with $x>y>0$ satisfy $x+y+xy=80$. What is $x$?
-
-$ \textbf{(A)}\ 8 \qquad\textbf{(B)}\ 10 \qquad\textbf{(C)}\ 15 \qquad\textbf{(D)}\ 18 \qquad\textbf{(E)}\ 26$ Show that it is \textbf{(E)}\ 26.
-
-### Informal proof
-Use [[SFFT]] to get $(x+1)(y+1)=81$. The terms $(x+1)$ and $(y+1)$ must be factors of $81$, which include $1, 3, 9, 27, 81$. Because $x > y$, $x+1$ is equal to $27$ or $81$. But if $x+1=81$, then $y=0$ and so $x=\textbf{(E)}\ 26$.
-
-"
-
-"
+"""
 litex能证明1,3,9,27,81是81的因子，但不能它们是唯一的因子（因为litex暂时没for i in range(1, 82) 的遍历去证明的办法）解决办法包括
 
 1. 调用py库来计算81的因子，默认我们调用的库是对的（好处：这样做任何题目就会很容易，而且打印出来的时候很好看，如果让ai做题就会让ai有严格性：它是碉调包的，用完包然后把输出的结果贴在原地，非常准确），这样哪怕是自然语言编程也会很准确
@@ -50,7 +26,7 @@ litex能证明1,3,9,27,81是81的因子，但不能它们是唯一的因子（�
 2. 我内部引入对自然数上面的所有整数的遍历的证明，即引入for i in range(1, 82) 这样的遍历的办法
 
 3. lean的写法是 example : 81.divisors = [1,3,9,27,81] := by decide 这里 by decide 是去计算 Nat.divisors 81 的值，Nat.divisors 81 的值是 [d for d in range(1..n) if d | n] 这样的。本质上它也是内置了for循环和know（即知道从1到81的整数，可以和range(1,82)一一对应）
-"
+"""
 
 
 claim:

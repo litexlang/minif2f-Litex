@@ -13,28 +13,6 @@ y : ℂ
 
 """
 
-"
-## mathd_algebra_182  
-- **split:** `valid`  
-
-### Formal statement
-```lean
-theorem mathd_algebra_182
-  (y : ℂ) :
-  7 * (3 * y + 2) = 21 * y + 14 := sorry
-```
-
-### Informal statement
-Expand the following expression: $7(3y+2)$ Show that it is 21y+14.
-
-### Informal proof
-We apply the distributive property to get\begin{align*}
-7(3y+2) &= 7\cdot 3y+7\cdot 2\\
-&= 21y+14.
-\end{align*}
-
-"
-
 # There is a slight difference between the Litex code and Lean code and informal statement: Lean code suppose all the variables are complex numbers, but Litex code suppose all the variables are real numbers, and the informal statement is not clear about the type of the variables.
 
 claim:

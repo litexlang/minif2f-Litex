@@ -14,25 +14,6 @@ n : ℕ
 
 """
 
-"
-## induction_sum2kp1npqsqm1  
-- **split:** `valid`  
-
-### Formal statement
-```lean
-theorem induction_sum2kp1npqsqm1
-  (n : ℕ) :
-  ∑ k in (Finset.range n), 2 * k + 3 = (n + 1)^2 - 1 := sorry
-```
-
-### Informal statement
-Show that for positive integer n, $\sum_{k=0}^{n-1} (2k + 3) = (n + 1)^2 - 1$.
-
-### Informal proof
-We use induction. The base case for $n=0$ states 2*0+3 = 2^2-1 which is true.
-Assuming the result holds for $n\geq 0$, write $\sum_{k=0}^n (2k + 3) = \sum_{k=0}^{n-1} (2k + 3) + 2*n+3 = (n+1)^2 - 1 + 2n + 3 = n^2 + 4n + 4 - 1 = (n+2)^2 -1$. This shows the result holds for $n+1$ and concludes the proof by induction.
-"
-
 prove:
     fn sum_of_first_n_numbers(s seq(R), n N_pos) R
     know:
