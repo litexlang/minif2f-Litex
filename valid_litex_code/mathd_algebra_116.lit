@@ -1,0 +1,47 @@
+"
+## mathd_algebra_116  
+- **split:** `valid`  
+
+### Formal statement
+```lean
+theorem mathd_algebra_116
+  (k x: ℝ)
+  (h₀ : x = (13 - Real.sqrt 131) / 4)
+  (h₁ : 2 * x^2 - 13 * x + k = 0) :
+  k = 19/4 := sorry
+```
+
+### Informal statement
+For what real value of $k$ is $\frac{13-\sqrt{131}}{4}$ a root of $2x^2-13x+k$? Show that it is \frac{19}{4}.
+
+### Informal proof
+We could substitute $(13-\sqrt{131})/4$ for $x$ in the equation, but the quadratic formula suggests a quicker approach. Substituting $2$, $-13$, and $k$ into the quadratic formula gives  \[
+\frac{-(-13)\pm\sqrt{(-13)^2-4(2)(k)}}{2(2)}= \frac{13\pm\sqrt{169-8k}}{4}.
+\]Setting $(13+\sqrt{169-8k})/4$ and $(13-\sqrt{169-8k})/4$ equal to $(13-\sqrt{131})/4$, we find no solution in the first case and $169-8k=131$ in the second case.  Solving yields $k=(169-131)/8=38/8=\frac{19}{4}$.
+
+"
+
+claim:
+    forall k R:
+        2 * ((13 - sqrt(131)) / 4) ^ 2 - 13 * ((13 - sqrt(131)) / 4) + k = 0
+        =>:
+            k = 19 / 4
+    prove:
+        let a, b R: a = sqrt(131), b = (13 - a) / 4
+        have x R = (13 - a) / 4
+        =:
+            0
+            2 * x ^ 2 - 13 * x + k = 0
+            2 * ((13 - a) / 4) ^ 2 - 13 * ((13 - a) / 4) + k
+            2 * b ^ 2 - 13 * ((13 - a) / 4) + k
+            2 * b * b - 13 * ((13 - a) / 4) + k
+            2 * ((13 - a) / 4) * ((13 - a) / 4) - (13 / 4) * (13 - a) + k
+            (a ^ 2 - 169) / 8 + k
+            (131 - 169) / 8 + k
+            - 19 / 4 + k
+        =:
+            19 / 4
+            0 + 19 / 4
+            - 19 / 4 + k + 19 / 4
+            k
+        k = 19 / 4
