@@ -9,3 +9,7 @@ litex能证明1,3,9,27,81是81的因子，但不能它们是唯一的因子（�
 2. 我内部引入对自然数上面的所有整数的遍历的证明，即引入for i in range(1, 82) 这样的遍历的办法
 
 3. lean的写法是 example : 81.divisors = [1,3,9,27,81] := by decide 这里 by decide 是去计算 Nat.divisors 81 的值，Nat.divisors 81 的值是 [d for d in range(1..n) if d | n] 这样的。本质上它也是内置了for循环和know（即知道从1到81的整数，可以和range(1,82)一一对应
+
+## mathd_algebra_13
+
+这是很典型的 是且只是 的证明。可能用一个claim不太够

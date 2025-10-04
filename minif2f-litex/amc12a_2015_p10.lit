@@ -40,6 +40,7 @@ claim:
         know forall x N_pos: 81 % x = 0 => or(x = 1, x = 3, x = 9, x = 27, x = 81)
 
         x + y + (x * y) + 1 = (x + 1) * (y + 1) = 80 + 1 = 81
+        # x + 1 > 0, y + 1 > 0 leads to x + 1 != 0, y + 1 != 0, so x + 1 and y + 1 satisfies template of %
         x + 1 > 0, y + 1 > 0
         $factors_divide_product(x + 1, y + 1, 81)
         

@@ -1,0 +1,59 @@
+"""
+## mathd_algebra_13 (valid)
+
+### Problem Statement
+/-- Find $A$ and $B$ such that
+\[\frac{4x}{x^2-8x+15} = \frac{A}{x-3} + \frac{B}{x-5}\]for all $x$ besides 3 and 5. Express your answer as an ordered pair in the form $(A, B).$ Show that it is (-6, 10).-/
+
+### Formal Statement
+```lean
+theorem mathd_algebra_13 (a b : ℝ)
+  (h₀ : ∀ x, x - 3 ≠ 0 ∧ x - 5 ≠ 0 → 4 * x / (x ^ 2 - 8 * x + 15) = a / (x - 3) + b / (x - 5)) :
+  a = -6 ∧ b = 10 := by
+```
+
+### Goal
+```lean
+a b : ℝ
+h₀ : ∀ (x : ℝ), x - 3 ≠ 0 ∧ x - 5 ≠ 0 → 4 * x / (x ^ 2 - 8 * x + 15) = a / (x - 3) + b / (x - 5)
+⊢ a = -6 ∧ b = 10
+```
+
+"""
+
+"""
+这是很典型的 是且只是 的证明。可能用一个claim不太够
+"""
+
+
+claim:
+    forall a, b R:
+        forall x R:
+            x - 3 != 0
+            x - 5 != 0
+            =>:
+                4 * x / (x ^ 2 - 8 * x + 15) = a / (x - 3) + b / (x - 5)
+        =>:
+            a = -6
+            b = 10
+    prove:
+        #当 x = 4 时
+        4 * 4 / (4 ^ 2 - 8 * 4 + 15) = a / (4 - 3) + b / (4 - 5) = 16 / (16 - 32 + 15) = a / 1 + b / (-1) =16 / (-1) = a - b
+        -16 = a - b  # (1)
+        
+        #当 x = 6 时
+        4 * 6 / (6 ^ 2 - 8 * 6 + 15) = a / (6 - 3) + b / (6 - 5) = 24 / (36 - 48 + 15) = a / 3 + b / 1 = 24 / 3 = a / 3 + b
+        8 = a / 3 + b  # (2)
+        
+        #从 (1) 得：
+        a = -16 + b
+        #代入 (2)：
+        8 = (-16 + b) / 3 + b
+        8 = -16/3 + b/3 + b
+        8 = -16/3 + 4*b/3
+        8 + 16/3 = 4*b/3
+        40/3 = 4*b/3
+        40/3 * 3/4 = 4*b/3 * 3/4 = b = 10
+        
+        a = -16 + 10 = -6
+
