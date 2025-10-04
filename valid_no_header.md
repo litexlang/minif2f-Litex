@@ -388,7 +388,7 @@ open BigOperators Real Nat Topology Rat
 
 ---
 
-## ❌ mathd_algebra_13 (valid)
+## mathd_algebra_13 (valid)
 
 ### Problem Statement
 /-- Find $A$ and $B$ such that
@@ -419,7 +419,7 @@ open BigOperators Real Nat Topology Rat
 ```
 
 ### Status
-- **Litex Completed**: False
+- **Litex Completed**: True
 
 ---
 
@@ -596,7 +596,7 @@ open BigOperators Real Nat Topology Rat
 ## ❌ imo_2006_p3 (valid)
 
 ### Problem Statement
-/-- Show that for any real numbers $a$, $b$, and $c$, we have $(ab(a^2 - b^2)) + (bc(b^2 - c^2)) + (ca(c^2 - a^2)) \leq \frac{9\sqrt{2}}{32}(a^2 + b^2 + c^2)^2$.-/
+
 
 ### Formal Statement
 ```lean
@@ -657,7 +657,7 @@ open BigOperators Real Nat Topology Rat
 
 ---
 
-## ❌ imo_1964_p1_2 (valid)
+## ? imo_1964_p1_2 (valid)
 
 ### Problem Statement
 /-- Show that for any natural number $n$, $7$ does not divide $2^n + 1$.

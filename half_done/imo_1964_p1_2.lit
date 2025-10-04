@@ -1,0 +1,40 @@
+"""
+imo_1964_p1_2 (valid)
+
+### Problem Statement
+/-- Show that for any natural number $n$, $7$ does not divide $2^n + 1$.
+-/
+
+### Formal Statement
+```lean
+theorem imo_1964_p1_2 (n : ℕ) : ¬7 ∣ 2 ^ n + 1 := by
+```
+
+### Goal
+```lean
+n : ℕ
+⊢ ¬7 ∣ 2 ^ n + 1
+```
+"""
+
+"""
+本题就做一半
+我们依次计算：
+
+| n mod 3 | 2ⁿ mod 7 | 2ⁿ + 1 mod 7 |
+| ------- | -------- | ------------ |
+| 1       | 2        | 3            |
+| 2       | 4        | 5            |
+| 0       | 1        | 2            |
+
+"""
+
+"""
+可能要引入 range 这个关键词，range表示一个集合，这个集合里面的元素是自然数，这个集合里面的元素是 0 到 6 之间的自然数，比如 range(0, 7)。但是我不太确定？？
+"""
+
+claim:
+    forall n N:
+        (2 ^ n + 1) % 7 != 0
+    prove:
+        know forall 
