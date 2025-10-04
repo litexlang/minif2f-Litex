@@ -16,7 +16,7 @@ h₁ : logb 8 b + logb 4 (a ^ 2) = 7
 
 """
 
-import "../minif2f" as minif2f
+import "../minif2f/main.lit"
 
 claim:
     forall a, b R:
@@ -28,9 +28,6 @@ claim:
         =>:
             a * b = 512
     prove:
-        know forall a, b, c R => log(a ^ b, c) = (1/b) * log(a, c), log(a ^ b, c) = log(a, c) / b
-        know forall a, b, c R: log(a, b) = c => b = a ^ c
-
         log(2 ^ 3, a) = 1/3 * log(2, a) = log(8, a) = (1/3) * log(2, a)
         
         (1/2) * log(2, b ^ 2) = log(2 ^ 2, b ^ 2)

@@ -19,7 +19,7 @@ h₂ : 6 * x ^ 2 = 2 * (6 * y ^ 2)
 
 """
 
-import "../minif2f" as minif2f
+import "../minif2f/main.lit"
 
 claim:
     forall x, y R:
@@ -30,10 +30,10 @@ claim:
         =>:
             x ^ 3 = 2^(3 / 2)
     prove:
-        know $minif2f::are_two_different_quadratic_eqn_solutions(1, 0, -2, 2^(1/2), -((2)^(1/2)))
+        know $are_two_different_quadratic_eqn_solutions(1, 0, -2, 2^(1/2), -((2)^(1/2)))
         know or(x = 2^(1/2), x = -((2)^(1/2)))
 
-        $minif2f::odd_pow_eq_unique_root(y, 3, 1, 1)
+        $odd_pow_eq_unique_root(y, 3, 1, 1)
         y = 1
         6 * x^2 = 2 * (6 * 1^2) = 12
         x^2 = 12 / 6 = 2

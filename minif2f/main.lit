@@ -44,7 +44,7 @@ know forall x, y, z R => x ^ y ^ z = x ^ (y * z)
 
 # aime_1984_p5
 know:
-    forall a, b, c R: a > 0, b > 0, c > 0, a != 1 => log(a ^ b, c) = (1/b) * log(a, c), log(a ^ b, c) = log(a, c) / b
+    forall a, b, c R => log(a ^ b, c) = (1/b) * log(a, c), log(a ^ b, c) = log(a, c) / b
     forall a, b, c R: a > 0, b > 0, c > 0, a != 1 => log(a, b ^ c) = c * log(a, b)
     forall a, b, c R => log(a, b * c) = log(a, b) + log(a, c)
     forall a, b, c R: log(a, b) = c => b = a ^ c

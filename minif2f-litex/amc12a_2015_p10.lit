@@ -28,6 +28,7 @@ litex能证明1,3,9,27,81是81的因子，但不能它们是唯一的因子（�
 3. lean的写法是 example : 81.divisors = [1,3,9,27,81] := by decide 这里 by decide 是去计算 Nat.divisors 81 的值，Nat.divisors 81 的值是 [d for d in range(1..n) if d | n] 这样的。本质上它也是内置了for循环和know（即知道从1到81的整数，可以和range(1,82)一一对应）
 """
 
+import "../minif2f/main.lit"
 
 claim:
     forall x N_pos, y N_pos:
@@ -37,9 +38,11 @@ claim:
             x = 26
     prove:
         know forall x N_pos: 81 % x = 0 => or(x = 1, x = 3, x = 9, x = 27, x = 81)
-        know 81 % (x + 1) = 0, 81 % (y + 1) = 0
 
         x + y + (x * y) + 1 = (x + 1) * (y + 1) = 80 + 1 = 81
+        x + 1 > 0, y + 1 > 0
+        $factors_divide_product(x + 1, y + 1, 81)
+        
         claim:
             x + 1 != 1
             prove_by_contradiction:
