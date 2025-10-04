@@ -1,0 +1,49 @@
+"""
+Problem: aime_1984_p5
+
+Informal Statement:
+Determine the value of $ab$ if $\log_8a+\log_4b^2=5$ and $\log_8b+\log_4a^2=7$. Show that it is 512.
+
+Formal Statement:
+theorem aime_1984_p5 (a b : ℝ) (h₀ : Real.logb 8 a + Real.logb 4 (b ^ 2) = 5)
+  (h₁ : Real.logb 8 b + Real.logb 4 (a ^ 2) = 7) : a * b = 512 := by
+
+Goal:
+a b : ℝ
+h₀ : logb 8 a + logb 4 (b ^ 2) = 5
+h₁ : logb 8 b + logb 4 (a ^ 2) = 7
+⊢ a * b = 512
+
+"""
+
+import "../minif2f" as minif2f
+
+claim:
+    forall a, b R:
+        a > 0
+        b > 0
+        a != 1
+        log(8, a) + log(4, b ^ 2) = 5
+        log(8, b) + log(4, a ^ 2) = 7
+        =>:
+            a * b = 512
+    prove:
+        know forall a, b, c R => log(a ^ b, c) = (1/b) * log(a, c), log(a ^ b, c) = log(a, c) / b
+        know forall a, b, c R: log(a, b) = c => b = a ^ c
+
+        log(2 ^ 3, a) = 1/3 * log(2, a) = log(8, a) = (1/3) * log(2, a)
+        
+        (1/2) * log(2, b ^ 2) = log(2 ^ 2, b ^ 2)
+        log(4, b ^ 2) = log(2 ^ 2, b ^ 2)
+        (1/2) * log(2, b ^ 2) = (1/2) * (2 * log(2, b)) = log(2, b)
+        log(2 ^ 3, b) = log(8, b) = (1/3) * log(2, b)
+
+        log(2 ^ 2, a ^ 2) = log(4, a ^ 2) = (1/2) * log(2, a ^ 2)
+        (1/2) * log(2, a ^ 2) = (1/2) * (2 * log(2, a)) = log(2, a)
+
+        (1/3) * log(2, a) + log(2, b) = 5
+        (1/3) * log(2, b) + log(2, a) = 7
+
+        ((1/3) * log(2, a) + log(2, b)) + ((1/3) * log(2, b) + log(2, a)) = 5 + 7 = 12 = (4/3) * (log(2, a) + log(2, b))
+        12 * 3 / 4 = log(2, a) + log(2, b) = 9 = log(2, a * b)
+        a * b = 2 ^ 9 = 512
